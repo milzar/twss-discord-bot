@@ -1,5 +1,6 @@
 require("dotenv").config()
 const twss = require('twss');
+twss.algo = 'knn'
 const Discord = require("discord.js")
 const client = new Discord.Client()
 const TWSS_RESPONSE = "That's what she said!"
