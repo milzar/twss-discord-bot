@@ -2,7 +2,7 @@ const twss = require('twss');
 const Discord = require("discord.js")
 const client = new Discord.Client()
 const TWSS_RESPONSE = "That's what she said!"
-const THRESHOLD = 0.86
+const THRESHOLD = 0.93
 require("dotenv").config()
 
 
