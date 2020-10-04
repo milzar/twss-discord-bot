@@ -1,20 +1,23 @@
+require("dotenv").config()
 const twss = require('twss');
 const Discord = require("discord.js")
 const client = new Discord.Client()
 const TWSS_RESPONSE = "That's what she said!"
-const THRESHOLD = 0.93
-require("dotenv").config()
+const THRESHOLD = process.env.THRESHOLD
+const MIN_WORD_COUNT = process.env.MIN_WORD_COUNT
 
 
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
+  console.log("Running with Threshold: ", THRESHOLD, " MIN_WORD_COUNT: ", MIN_WORD_COUNT)
 })
 
 client.on("message", (msg) => {
 const message = msg.content
 
-if(msg.author.bot){
+// Ignore bot messages and short sentences
+if(msg.author.bot || message.split(' ').length < MIN_WORD_COUNT ){
   return;
 }
 
