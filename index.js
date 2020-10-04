@@ -13,9 +13,17 @@ client.on("ready", () => {
 
 client.on("message", (msg) => {
 const message = msg.content
-console.log(twss.prob(message))
-if (twss.prob(message) > THRESHOLD) {
+
+if(msg.author.bot){
+  return;
+}
+
+console.log( message, " probablitiy is ", twss.prob(message))
+
+if (twss.prob(message) >= THRESHOLD) {
     msg.reply(TWSS_RESPONSE)
     }
 })
+
+
 client.login(process.env.BOT_TOKEN)
