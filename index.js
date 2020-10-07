@@ -2,7 +2,7 @@ require("dotenv").config()
 const twss = require('twss');
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const  googleIt = require('google-it')
+const googleIt = require('google-it')
 
 const TWSS_RESPONSE = "That's what she said!";
 const NO_U = "no u";
@@ -18,11 +18,11 @@ client.on("ready", () => {
 })
 
 client.on("message", (msg) => {
-const message = msg.content.trim().toLowerCase()
+  const message = msg.content.trim().toLowerCase()
 
-// Ignore bot messages and short sentences
-if(msg.author.bot || message.split(' ').length < MIN_WORD_COUNT ){
-  return;
+  // Ignore bot messages and short sentences
+  if(msg.author.bot || message.split(' ').length < MIN_WORD_COUNT ){
+    return;
 }
 
 // QUESTION
@@ -37,7 +37,7 @@ if(message.startsWith(QUESTION)){
       }
 
   }).catch(e => {
-    console.log("error while googling for", query, e)
+      console.log("error while googling for", query, e)
   })
   return;
 }
@@ -48,9 +48,9 @@ if(msg.isMemberMentioned(client.user)){
   return;
 }
 
-
+// TWSS responses
 if (twss.prob(message) >= THRESHOLD) {
-    msg.reply(TWSS_RESPONSE)
+      msg.reply(TWSS_RESPONSE)
     }
 })
 
