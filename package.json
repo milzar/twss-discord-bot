@@ -9,10 +9,12 @@
   "dependencies": {
     "discord.js": "^11.4.2",
     "dotenv": "^8.2.0",
-    "twss": "^0.1.6"
+    "twss": "^0.1.6",
+    "google-it": "^1.5.2"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
+    "google-it": "^1.5.2",
     "nodemon": "^1.18.9",
     "twss": "^0.1.6"
   }
