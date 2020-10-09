@@ -49,7 +49,7 @@ if(msg.isMemberMentioned(client.user)){
 }
 
 // TWSS responses
-if (twss.prob(message) >= THRESHOLD) {
+if (twss.prob(message) >= THRESHOLD && Math.random() > 0.7 ) {
       msg.reply(TWSS_RESPONSE)
     }
 })
