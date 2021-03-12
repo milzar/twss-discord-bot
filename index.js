@@ -40,11 +40,11 @@ client.on("message", (msg) => {
         return;
     }
 
-// Respond to Mentions
-    if (msg.isMemberMentioned(client.user)) {
-        msg.reply(NO_U)
-        return;
-    }
+// // Respond to Mentions
+//     if (msg.isMemberMentioned(client.user)) {
+//         msg.reply(NO_U)
+//         return;
+//     }
 
 // TWSS responses
     if (twss.prob(message) >= THRESHOLD) {
