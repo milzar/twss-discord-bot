@@ -48,9 +48,10 @@ client.on("message", (msg) => {
 
 // TWSS responses
     if (twss.prob(message) >= THRESHOLD) {
-        msg.react("regional_indicator_s");
-        msg.react("regional_indicator_h");
-        msg.react("regional_indicator_e");
+
+        msg.react("🇸");
+        msg.react("🇭");
+        msg.react("🇪");
 
     }
 })
